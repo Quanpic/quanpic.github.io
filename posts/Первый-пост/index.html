@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+  <title>Май литл бложик</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700,300italic&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../stylesheets/style_min/template.min.css">
+</head>
+<body>
+  <header>
+    <a href="../" class="name">Dankin Blog</a>
+    <h1 class="header">Первый пост</h1>
+  </header>
+  <main>
+    <p>О'Кейси, летс го! Меня зовут Даниил и я начинающий рубист. Это мой типа
+"личный" блог, который будет никому не интересен. Тут я буду делать иногда
+постики с разными мыслями по web-dev'у и не только. Этот бложик я запилил на
+Middleman. Может мой следующий пост будет как раз об этом.</p>
+
+<p><img src="http://cs7054.vk.me/c540108/v540108789/167fc/_20ACBVGmWI.jpg" width="100%" /></p>
+
+    <div id="disqus_thread"></div>
+    <script>
+      /**
+      * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+      */
+      /*
+      var disqus_config = function () {
+      this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      */
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+
+      s.src = '//dankinblog.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </main>
+  <footer>
+    <p class="copyright">© 2016 Dankin Blog</p>
+  </footer>
+</body>
+</html>
