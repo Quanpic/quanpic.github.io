@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+  <title>Блог и Middleman - часть 1</title>
+  <link rel="shortcut icon" href="images/ico.png" type="image/png">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700,300italic&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../../stylesheets/style_min/template.css.min.css">
+</head>
+<body>
+  <header>
+    <a href="../../" class="name">Dankin Blog</a>
+    <h1 class="header">Блог и Middleman - часть 1</h1>
+  </header>
+  <main>
+    <p>Во-первых, что такое <a href="https://middlemanapp.com/">Middleman</a>? Беру определение с оф. сайта. Middleman - это генератор статических сайтов, использующий все инструменты веб-разработки.</p>
+
+<p>Для того чтобы установить Middleman на свой компьютер, нужно установить <a href="https://www.ruby-lang.org/ru/">ruby</a>, так как Middleman является гемом. Как сказано на оф. сайте нужно выпольнить пару команд в терминале.</p>
+
+<p><code>
+gem install middleman
+</code></p>
+
+<p>Позже создаём проект:</p>
+
+<p><code>
+middleman init blog
+</code></p>
+
+<p>И переходим в него:</p>
+
+<p><code>
+cd blog
+</code></p>
+
+<p>Дальше заходим в Gemfile (список ваших гемов) и добавляем гем "middleman-blog"</p>
+
+<p><code>
+gem "middleman-blog"
+</code></p>
+
+<p>Заходим в ваш config.rb и добавляем эти строчки:</p>
+
+<pre>
+activate :blog do |blog|
+  blog.permalink = "posts/{title}"
+  blog.sources = "posts/{title}"
+end
+</pre>
+
+<p>Строчка <code>blog.permalink = "posts/{title}"</code> генерирует ссылки. Вы можете указать любой путь. <code>{title}</code> указывает на заголовок поста. В <code>blog.sources = "posts/{title}"</code> вы можете указать место, где находятся файлы посты. Посты мы будем писать конечно же на markdown, поэтому давайте изменим дефолтное расширение для постов.</p>
+
+<pre>
+activate :blog do |blog|
+  ...
+  blog.default_extension = ".html.md"
+  ...
+end
+</pre>
+
+<p>Теперь давайте запустим веб-сервер Middleman. В терминале пишем одно слово:</p>
+
+<p><code>middleman</code></p>
+
+<p>Далее переходим по ссылке, которая указана в терминале и попадаем на наш "блог".</p>
+
+<p>В этой части мы произвели базовую настройку. В следующей части мы займёмся шаблонами.</p>
+
+    <div id="disqus_thread"></div>
+    <script>
+      /**
+      * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+      */
+      /*
+      var disqus_config = function () {
+      this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      */
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+
+      s.src = '//dankinblog.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </main>
+  <footer>
+    <p class="copyright">© 2016 Dankin Blog</p>
+  </footer>
+</body>
+</html>

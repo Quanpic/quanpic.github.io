@@ -405,7 +405,7 @@ header {
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   align-self: center;
   margin-top: 50px;
   width: 60%;
@@ -413,6 +413,9 @@ main {
   @media (max-width: 500px) {
     main {
       width: 90%; } }
+  main code, main pre {
+    background-color: #ececec;
+    padding: 2px; }
 
 #disqus_thread {
   margin-top: 80px;
